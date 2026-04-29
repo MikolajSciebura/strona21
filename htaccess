@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Wymuszenie HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://dawdan-cars.pl/$1 [R=301,L]
+
+# Usunięcie index.html
+RewriteCond %{THE_REQUEST} /index\.html
+RewriteRule ^index\.html$ https://dawdan-cars.pl/ [R=301,L]
