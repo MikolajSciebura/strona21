@@ -691,6 +691,67 @@ footer h3 {
     font-size: 1.2rem;
 }
 
+/* Read More Functionality */
+.seo-text-hidden {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.seo-text-block.expanded .seo-text-hidden {
+    max-height: 2000px; /* Adjust if content is very long */
+    opacity: 1;
+    margin-top: 20px;
+}
+
+.read-more-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-read-more {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 25px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background: var(--primary-color);
+    color: #000;
+}
+
+.btn-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.seo-text-block.expanded .btn-read-more i {
+    transform: rotate(180deg);
+}
+
+.btn-read-more .text-collapse {
+    display: none;
+}
+
+.seo-text-block.expanded .btn-read-more .text-expand {
+    display: none;
+}
+
+.seo-text-block.expanded .btn-read-more .text-collapse {
+    display: inline;
+}
+
 .hero-subtext {
     font-size: 1.3rem;
     text-align: center;
