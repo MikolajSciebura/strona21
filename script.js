@@ -215,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCustomSlider(".buys-slider");
     initCustomAOS();
     initFAQ();
+    initReadMore();
 
     // 7. Defer non-critical CSS (Final Optimization)
     const links = document.querySelectorAll('link[media="print"]');
@@ -401,6 +402,22 @@ function initFAQ() {
             question.setAttribute('aria-expanded', !isActive);
         });
     });
+}
+
+/**
+ * Read More / SEO Text Toggle Logic
+ */
+function initReadMore() {
+    const readMoreBtn = document.querySelector('.btn-read-more');
+    const seoTextBlock = document.querySelector('.seo-text-block');
+
+    if (readMoreBtn && seoTextBlock) {
+        readMoreBtn.addEventListener('click', () => {
+            const isExpanded = seoTextBlock.classList.contains('expanded');
+            seoTextBlock.classList.toggle('expanded');
+            readMoreBtn.setAttribute('aria-expanded', !isExpanded);
+        });
+    }
 }
 
 /**
